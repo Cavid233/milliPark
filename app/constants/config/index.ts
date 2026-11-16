@@ -19,6 +19,7 @@ const config = {
   },
   fonts: {
     onest: {
+      light: 'Onest-Light',
       regular: 'Onest-Regular',
       medium: 'Onest-Medium',
       semiBold: 'Onest-SemiBold',

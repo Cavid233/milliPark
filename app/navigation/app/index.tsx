@@ -1,18 +1,11 @@
-import { screenOptions } from '@/constants';
+import {
+  ROOT_ROUTE_NAMES,
+  RootRootParamsList,
+  screenOptions,
+} from '@/constants';
 import { createStackNavigator } from '@react-navigation/stack';
-import { NavigatorScreenParams } from '@react-navigation/native';
-import OnboardingStackNavigator, {
-  ONBOARDING_ROUTE_NAMES,
-  OnboardingRootParamsList,
-} from './stacks/onboarding';
-
-export enum ROOT_ROUTE_NAMES {
-  OnboardingNavigator = 'OnboardingNavigator',
-}
-
-export type RootRootParamsList = {
-  OnboardingNavigator: NavigatorScreenParams<OnboardingRootParamsList>;
-};
+import OnboardingStackNavigator from './stacks/onboarding';
+import AuthStackNavigator from './stacks/auth';
 
 const Stack = createStackNavigator<RootRootParamsList>();
 
@@ -23,9 +16,12 @@ const AppNavigation = () => {
         name={ROOT_ROUTE_NAMES.OnboardingNavigator}
         component={OnboardingStackNavigator}
       />
+      <Stack.Screen
+        name={ROOT_ROUTE_NAMES.AuthNavigator}
+        component={AuthStackNavigator}
+      />
     </Stack.Navigator>
   );
 };
 
-export { ONBOARDING_ROUTE_NAMES };
 export default AppNavigation;

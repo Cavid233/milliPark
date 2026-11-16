@@ -3,6 +3,7 @@ const colors = {
     black: '#000000',
     white: '#FFFFFF',
     ivory: '#F7F7F3',
+    white80: 'rgba(255, 255, 255, 0.8)',
   },
   glass: {
     white10: 'rgba(217, 217, 217, 0.1)',
@@ -10,6 +11,7 @@ const colors = {
     white30: 'rgba(255, 255, 255, 0.3)',
     white40: 'rgba(255, 255, 255, 0.4)',
     mint20: 'rgba(233, 240, 235, 0.2)',
+    olive20: 'rgba(92, 95, 82, 0.2)',
     black20: 'rgba(0, 0, 0, 0.2)',
     black30: 'rgba(0, 0, 0, 0.3)',
   },

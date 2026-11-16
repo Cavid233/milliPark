@@ -5,6 +5,7 @@ const {
 } = config;
 
 const fonts = {
+  [onest.light]: require('./Onest_300Light.ttf'),
   [onest.regular]: require('./Onest_400Regular.ttf'),
   [onest.medium]: require('./Onest_500Medium.ttf'),
   [onest.semiBold]: require('./Onest_600SemiBold.ttf'),

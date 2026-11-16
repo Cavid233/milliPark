@@ -9,6 +9,10 @@ export enum SvgXmlIconNames {
   camping = 'camping',
   hiking = 'hiking',
   bicycle = 'bicycle',
+  chevronRight = 'chevronRight',
+  myGov = 'myGov',
+  apple = 'apple',
+  google = 'google',
 }
 
 export interface IconSize {

@@ -8,6 +8,10 @@ import BoatIcon from './boat';
 import CampingIcon from './camping';
 import HikingIcon from './hiking';
 import BicycleIcon from './bicycle';
+import ChevronRightIcon from './chevron-right';
+import MyGovIcon from './mygov';
+import AppleIcon from './apple';
+import GoogleIcon from './google';
 import { SvgXmlIconNames, SvgXmlProps } from './types';
 
 export const IconSize = {
@@ -23,6 +27,10 @@ export const IconSize = {
     width: 24,
     height: 24,
   },
+  myGov: {
+    width: 42.9863,
+    height: 24,
+  },
 };
 
 const icons: Record<SvgXmlIconNames, string> = {
@@ -34,6 +42,10 @@ const icons: Record<SvgXmlIconNames, string> = {
   [SvgXmlIconNames.camping]: CampingIcon,
   [SvgXmlIconNames.hiking]: HikingIcon,
   [SvgXmlIconNames.bicycle]: BicycleIcon,
+  [SvgXmlIconNames.chevronRight]: ChevronRightIcon,
+  [SvgXmlIconNames.myGov]: MyGovIcon,
+  [SvgXmlIconNames.apple]: AppleIcon,
+  [SvgXmlIconNames.google]: GoogleIcon,
 };
 
 // Icons keep the colors exported from Figma; `color` only affects currentColor.

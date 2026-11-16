@@ -12,6 +12,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { OnboardingContainer } from '@/containers';
 import { ArrowButton, DesignCanvas, RoundIconButton } from '@/components';
 import { SvgXmlIconNames } from '@/assets';
+import { AUTH_ROUTE_NAMES, ROOT_ROUTE_NAMES } from '@/constants';
+import { useAppNavigation } from '@/hooks';
 import Pagination from './pagination';
 import DiscoverSlide from './slides/discoverSlide';
 import ExperiencesSlide from './slides/experiencesSlide';
@@ -21,6 +23,7 @@ const slides = [DiscoverSlide, ExperiencesSlide];
 const OnboardingScreen = () => {
   const { width } = useWindowDimensions();
   const insets = useSafeAreaInsets();
+  const navigation = useAppNavigation();
   const scrollRef = useRef<ScrollViewInstance>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const isLastSlide = activeIndex === slides.length - 1;
@@ -35,11 +38,14 @@ const OnboardingScreen = () => {
 
   const handleNext = useCallback(() => {
     if (isLastSlide) {
-      // TODO: navigate to the welcome / login screen once it is implemented.
+      // Replace instead of navigate so going back doesn't reopen onboarding.
+      navigation.replace(ROOT_ROUTE_NAMES.AuthNavigator, {
+        screen: AUTH_ROUTE_NAMES.Welcome,
+      });
       return;
     }
     scrollRef.current?.scrollTo({ x: width * (activeIndex + 1) });
-  }, [activeIndex, isLastSlide, width]);
+  }, [activeIndex, isLastSlide, navigation, width]);
 
   return (
     <OnboardingContainer>
